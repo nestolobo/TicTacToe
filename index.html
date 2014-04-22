@@ -1,0 +1,22 @@
+<html x-ng-app="">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+	<script src = "script.js"> </script>
+	<link rel="stylesheet" href =
+	"style.css" />
+	<title></title>
+</head>
+<body x-ng-controller="TicTacToeController">
+
+	<div class="container">
+		<div x-ng-repeat="b in board track by $index" x-ng-class="{cells: true, xBackground: b=='X'}" x-ng-click ="clicker($index)"> {{ b }}
+		</div>
+	</div>
+</body>
+</html>
+<!-- <body x-ng-app="" x-ng-init="rows = [ ['a','b','c'],['d','e','f'],['g','h','i'] ];"> 
+	<div class="row" x-ng-repeat = "x in rows track by $index">
+		<div x-ng-repeat="col in x track by $index" x-ng-click="rows[$parent.$index] [$index]='X';">
+			{{ col }} {{ $parent.$index }} {{ $index }}
+	</div>
+		</div> -->
