@@ -9,14 +9,10 @@
 <body x-ng-controller="TicTacToeController">
 
 	<div class="container">
-		<div x-ng-repeat="b in board track by $index" x-ng-class="{cells: true, xBackground: b=='X'}" x-ng-click ="clicker($index)"> {{ b }}
+		<div x-ng-repeat="b in board track by $index" x-ng-class="{cells: true, xMove: b == 'X', oMove: b == 'O'}" x-ng-click ="clicker($index)"> {{ b }}
 		</div>
 	</div>
+	<button class="reset" x-ng-click="reset ()">RESET</button>
+	<h1> Green: {{xWins}} <br/>Orange: {{oWins}} </h1>
 </body>
 </html>
-<!-- <body x-ng-app="" x-ng-init="rows = [ ['a','b','c'],['d','e','f'],['g','h','i'] ];"> 
-	<div class="row" x-ng-repeat = "x in rows track by $index">
-		<div x-ng-repeat="col in x track by $index" x-ng-click="rows[$parent.$index] [$index]='X';">
-			{{ col }} {{ $parent.$index }} {{ $index }}
-	</div>
-		</div> -->

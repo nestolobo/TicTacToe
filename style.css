@@ -6,13 +6,27 @@
 .cells {
 	height: 150px;
 	width: 150px;
-	border: 2px solid black;
+	border: 2px solid white;
 	background-color: gray;
 	float: left;
+	border-radius: 10px;
 }
-.xBackground {
+
+.xMove {
 	background-color: green;
+	color: green;
+
 }
-.yBackground {
-	background-color: yellow;
+.oMove {
+	background-color: orange;
+	color: orange;
+}
+.bgblue {
+	background-color: blue;
+}
+h1 {
+	text-align: center;
+	float: left;
+	position: relative;
+	display: inline-block;
 }
