@@ -4,7 +4,9 @@
 	<script src = "script.js"> </script>
 	<link rel="stylesheet" href =
 	"style.css" />
-	<title></title>
+	<title>TicTacToeFoSho</title>
+<!-- 	// <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	// <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script> -->
 </head>
 <body x-ng-controller="TicTacToeController">
 
@@ -12,7 +14,8 @@
 		<div x-ng-repeat="b in board track by $index" x-ng-class="{cells: true, xMove: b == 'X', oMove: b == 'O'}" x-ng-click ="clicker($index)"> {{ b }}
 		</div>
 	</div>
-	<button class="reset" x-ng-click="reset ()">RESET</button>
-	<h1> Green: {{xWins}} <br/>Orange: {{oWins}} </h1>
+	<button class="reset" x-ng-click="reset ()"><strong>RESET</strong></button><br />
+	<div class="scoreboard">
+	<h1> <span> Game {{numGames}} </span><br /><br /> Green: {{xWins}} <br/> Orange: {{oWins}} <br /> Ties: {{ties}}</h1></div>
 </body>
 </html>

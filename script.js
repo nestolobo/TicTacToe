@@ -5,12 +5,8 @@ function TicTacToeController($scope) {
 	$scope.turn = 0;
 	$scope.oWins=0;
 	$scope.xWins=0;
-	$scope.reset = function() {
-		$scope.board =
-		[" ", " ", " ", " ", " ", " ", " ", " ", " "];
-		$scope.gameStatus=true;
-		$scope.turn = 0;
-		}
+	$scope.ties=0
+	$scope.numGames=1;
 	$scope.gameStatus = true;
 	$scope.clicker = function (cellIndex) {
 		if ($scope.board[cellIndex] == 'O' || $scope.board[cellIndex] == 'X') {
@@ -101,21 +97,13 @@ function TicTacToeController($scope) {
 			}
 		}//close win function
 		$scope.win();
+		$scope.reset = function() {
+			$scope.board =
+			[" ", " ", " ", " ", " ", " ", " ", " ", " "];
+			$scope.gameStatus=true;
+			$scope.numGames++;
+			$scope.turn= $scope.numGames+1;
+			$scope.ties= $scope.numGames - $scope.xWins -$scope.oWins - 1;
+		}
 	} //close clicker
 } //close controller
-
-
-// var p1=false;
-// var p2=false;
-// if (!p1 || !p2) {
-// 	if (rows.onClick == cells) {
-// 		p1answer = "X";
-// 		p1 = true;
-// 		display();
-// 	}
-// 	else if (rows.onClick ==cells) {
-// 		p2answer = "O";
-// 		p2 = true;
-// 		display ()
-// 	}
-// }
